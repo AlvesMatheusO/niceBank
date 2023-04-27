@@ -1,4 +1,6 @@
 import isCPF from './valida-cpf.js';
+import isMaior from './valida-idade.js';
+
 
 const camposDoForm = document.querySelectorAll("[required]");
 
@@ -11,7 +13,9 @@ function verificaCampo(campo) {
     if (campo.name == "cpf" && campo.value.length >= 11) {
         isCPF(campo);
     }
-
+    if (campo.name == "aniversario" && campo.value != "") {
+        isMaior(campo);
+    }
 }
 
 function validaNumerosRepetidos(cpf) {
